@@ -1,6 +1,8 @@
 import { apiConnector } from "../apiConnector"
 import { endpoints } from "../apis"
 import { toast } from "react-hot-toast"
+import { setToken } from "../../slices/authSlice"
+import { setUser } from "../../slices/profileSlice"
 
 
 const {
@@ -8,7 +10,7 @@ const {
   } = endpoints
 
 export function login(email, password, navigate) {
-    return async () => {
+    return async (dispatch) => {
       
       try {
 
@@ -24,6 +26,12 @@ export function login(email, password, navigate) {
         }
         console.log(response.data);
         toast.success("Login Successful")
+        dispatch(setToken(response.data.token))
+        dispatch(setUser({ ...response.data.user}))
+        
+      localStorage.setItem("token", JSON.stringify(response.data.token))
+      localStorage.setItem("user", JSON.stringify(response.data.user))
+
         navigate(`/dashboard/${response.data.user._id}`)
       } catch (error) {
         console.log("LOGIN API ERROR............", error)

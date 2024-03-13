@@ -1,10 +1,14 @@
 import React from 'react'
-import EmployeeList from './EmployeeList';
+
 import { useParams } from 'react-router';
 import { useState ,useEffect} from "react"
 import { getEmployees } from '../services/operations/add';
+import { useSelector } from 'react-redux';
+import { sidebarLinks } from "../data/dashboard-links";
+import SidebarLink from "../components/SidebarLink";
 
 function Dashboard(){
+   
     const { id } = useParams();
     const [employees, setEmployees] = useState([]);
     const [emp,setEmp]=useState(null);
@@ -24,22 +28,24 @@ function Dashboard(){
         };
         fetchData();
       }, []);
-    // console.log(employees);
-
-    // let emp = employees.find((user1)=> user1._id === id);
-    // console.log(emp.name);
-
+    const { user } = useSelector((state) => state.profile)
+    
     return(
         <>
         <div>Dashboard {id}</div>
-        {/* <p>
+        <p>
             welcome 
             
         </p>
-        <p>{emp.name}</p>
-        <p>{emp.address}</p>
-        <p>{emp.category}</p> */}
-        {/* <EmployeeList/> */}
+        <p>{user.name}</p>
+        <p>{user.address}</p>
+        <p>{user.category}</p>
+        {sidebarLinks.map((link) => {
+            if (link.role && user?.role !== link.role) return null
+            return (
+              <SidebarLink key={link.id} link={link} iconName={link.icon} />
+            )
+          })}
         </>
     )
 }
