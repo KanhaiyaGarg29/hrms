@@ -8,5 +8,7 @@ export const endpoints = {
     ADD_CATEGORY_API:BASE_URL+"/addCategory",
     GET_CATEGORY:BASE_URL+"/getCategory",
     GET_EMPLOYEES:BASE_URL+"/getAll",
-    GET_ADMIN:BASE_URL+"/getAdmin"
+    GET_ADMIN:BASE_URL+"/getAdmin",
+    ADD_LEAVE:BASE_URL+"/addLeave",
+    GET_LEAVE:BASE_URL+"/getLeaves"
   }

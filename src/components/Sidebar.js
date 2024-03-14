@@ -8,13 +8,7 @@ function Sidebar() {
   return (
     <>
     <div>Dashboard </div>
-    <p>
-        welcome 
-        
-    </p>
-    <p>{user.name}</p>
-    <p>{user.address}</p>
-    <p>{user.category}</p>
+    
     {sidebarLinks.map((link) => {
         if (link.role && user?.role !== link.role) return null
         return (
