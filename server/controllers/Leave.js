@@ -56,11 +56,32 @@ exports.getAllLeaves=async(req,res)=>{
     }
 }
 
+exports.getParticularLeave=async(req,res)=>{
+    try{
+        const userId=req.params.userId;
+        console.log(userId);
+        const leave=await Leave.find({userId:userId});
+        return res.status(200).json(
+            {
+                success:true,
+                data:leave,
+                message:"Leaves fetched successfully"
+            }
+           )
+    }catch(error){
+        console.error(error)
+        // Return 500 Internal Server Error status code with error message
+        return res.status(500).json({
+          success: false,
+          message: ` Failure Please Try Again`,
+        })
+    }
+}
 
 exports.updateLeaveStatus=async(req,res)=>{
     try{
-        const{userId,leaveStatus}=req.body;
-        const leave=await Leave.findOneAndUpdate({userId:userId},{status:leaveStatus},{new:true});
+        const{leaveId,leaveStatus}=req.body;
+        const leave=await Leave.findOneAndUpdate({_id:leaveId},{status:leaveStatus},{new:true});
         // await leave.save();
         return res.status(200).json(
             {

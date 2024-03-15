@@ -10,6 +10,9 @@ import AdminList from './components/AdminList';
 import Dashboard from './pages/Dashboard';
 import Leave from './components/Leave';
 import ViewLeave from './components/ViewLeave';
+import ViewStatus from './components/ViewStatus';
+import DashboardHome from './components/DashboardHome';
+import EDashBoard from './components/EDashBoard';
 
 
 function App() {
@@ -20,14 +23,16 @@ function App() {
     <Route path="/" element={<Home/>} />
     <Route path="/login" element={<Login/>}/>
    
-    <Route path='/dashboard/:id' element={<Dashboard/>}>
-
+    <Route element={<Dashboard/>}>
+     <Route path="/dashboard/Ahome" element={<DashboardHome></DashboardHome>}></Route>
+     <Route path="/dashboard/Ehome" element={<EDashBoard></EDashBoard>}></Route>
     <Route path='dashboard/askLeave' element={<Leave/>} />
     <Route path="dashboard/create" element={<AddEmployee/>}/>
     <Route path="dashboard/category" element={<AddCategory/>}/>
     <Route path="dashboard/viewEmployee" element={<EmployeeList/>}/>
     <Route path="dashboard/viewAdmin" element={<AdminList/>}/>
     <Route path="dashboard/viewLeaves" element={<ViewLeave/>}/>
+    <Route path="dashboard/viewStatus" element={<ViewStatus/>}/>
     </Route>
 
     </Routes>

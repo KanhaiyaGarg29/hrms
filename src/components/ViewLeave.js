@@ -37,8 +37,8 @@ function ViewLeave() {
                 <p>{user.endDate.substring(0, 10)}</p>
                 <p>{user.leaveType}</p>
                 <p>{user.status}</p>
-                <button onClick={()=>{dispatch(updateLeaveStatus(user.userId,'accepted'));}}>Accept</button>
-                <button onClick={()=>{dispatch(updateLeaveStatus(user.userId,'rejected'));}}>Reject</button>
+                <button onClick={()=>{dispatch(updateLeaveStatus(user._id,'accepted'));}}>Accept</button>
+                <button onClick={()=>{dispatch(updateLeaveStatus(user._id,'rejected'));}}>Reject</button>
             </div>
         ))
     )}

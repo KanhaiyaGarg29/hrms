@@ -37,5 +37,23 @@ export const sidebarLinks = [
     name:"View Leave Request",
     path:"dashboard/viewLeaves",
     role:"Admin"
-  }
+  },
+  {
+    id:7,
+    name:"View Leave Status",
+    path:"dashboard/viewStatus",
+    role:"Employee"
+  },
+  {
+    id:8,
+    name:"Home",
+    path:"dashboard/Ahome",
+    role:"Admin"
+  },
+  {
+    id:9,
+    name:"Home",
+    path:"dashboard/Ehome",
+    role:"Employee"
+  },
 ];
