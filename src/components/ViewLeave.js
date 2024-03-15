@@ -1,16 +1,20 @@
 
 import { useState ,useEffect} from "react"
 import { getLeaves } from "../services/operations/add";
+import { useDispatch } from "react-redux";
+import { updateLeaveStatus } from "../services/operations/add";
 
 function ViewLeave() {
-    const [leaveRequest, setLeaveRequest] = useState([]);
-    
+    // const [leaveRequest, setLeaveRequest] = useState([]);
+    const [leaveRequest, setLeaveRequest] = useState({ pending:[],accepted: [], rejected: []});
+    const dispatch=useDispatch();
+   
     
     useEffect(() => {
         const fetchData = async () => {
           try {
             const leavesData = await getLeaves();
-            setLeaveRequest(leavesData)
+            setLeaveRequest({ pending:leavesData.pending || [] ,accepted: leavesData.accepted || [], rejected: leavesData.rejected || [] });
           
            
           } catch (error) {
@@ -19,21 +23,55 @@ function ViewLeave() {
         };
         fetchData();
       }, []);
-
-     
+    
 
   return (
     <div>
-      {leaveRequest.map((user)=>(
-        <div>{user.name}
-        <p>{user.startDate.substring(0,10)}</p>
-        <p>{user.endDate.substring(0,10)}</p>
-        <p>{user.leaveType}</p>
-        <button>Accept</button>
-        <button>Reject</button>
-        </div>
-        ))}
-    </div>
+        {leaveRequest.pending.length === 0 ? (
+        <p>No pending leaves</p>
+    ) : (
+        leaveRequest.pending.map((user) => (
+            <div key={user._id}>
+                <p>{user.name}</p>
+                <p>{user.startDate.substring(0, 10)}</p>
+                <p>{user.endDate.substring(0, 10)}</p>
+                <p>{user.leaveType}</p>
+                <p>{user.status}</p>
+                <button onClick={()=>{dispatch(updateLeaveStatus(user.userId,'accepted'));}}>Accept</button>
+                <button onClick={()=>{dispatch(updateLeaveStatus(user.userId,'rejected'));}}>Reject</button>
+            </div>
+        ))
+    )}
+
+    {leaveRequest.accepted.length === 0 ? (
+        <p>No accepted leaves</p>
+    ) : (
+        leaveRequest.accepted.map((user) => (
+            <div key={user._id}>
+                <p>{user.name}</p>
+                <p>{user.startDate.substring(0, 10)}</p>
+                <p>{user.endDate.substring(0, 10)}</p>
+                <p>{user.leaveType}</p>
+                <p>{user.status}</p>
+               
+            </div>
+        ))
+    )}
+
+    {leaveRequest.rejected.length === 0 ? (
+        <p>No rejected leaves</p>
+    ) : (
+        leaveRequest.rejected.map((user) => (
+            <div key={user._id}>
+                <p>{user.name}</p>
+                <p>{user.startDate.substring(0, 10)}</p>
+                <p>{user.endDate.substring(0, 10)}</p>
+                <p>{user.leaveType}</p>
+                <p>{user.status}</p>
+            </div>
+        ))
+    )}
+</div>
   )
 }
 

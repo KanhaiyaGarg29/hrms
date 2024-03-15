@@ -2,7 +2,7 @@ import { apiConnector } from "../apiConnector";
 import { endpoints } from "../apis";
 import { toast } from "react-hot-toast";
 
-const { ADD_API, ADD_CATEGORY_API, GET_CATEGORY, GET_EMPLOYEES,GET_ADMIN ,ADD_LEAVE,GET_LEAVE} = endpoints;
+const { ADD_API, ADD_CATEGORY_API, GET_CATEGORY, GET_EMPLOYEES,GET_ADMIN ,ADD_LEAVE,GET_LEAVE,UPDATE_LEAVE_STATUS} = endpoints;
 
 export function addEmployee(
   name,
@@ -149,4 +149,29 @@ export async function getLeaves() {
     toast.error("Leaves not Fetched Successfully");
     throw error;
   }
+}
+
+export function updateLeaveStatus(
+  userId,
+  leaveStatus
+) {
+  return async () => {
+    try {
+      const response = await apiConnector("PUT", UPDATE_LEAVE_STATUS, {
+        userId,
+        leaveStatus
+      });
+
+    
+
+      if (!response.data.success) {
+        throw new Error(response.data.message);
+      }
+      toast.success(`Leave ${leaveStatus} Successful`);
+     
+    } catch (error) {
+      console.log(error);
+      toast.error(`Leave not ${leaveStatus} Succesfully`);
+    }
+  };
 }
