@@ -56,4 +56,16 @@ export const sidebarLinks = [
     path:"dashboard/Ehome",
     role:"Employee"
   },
+  {
+    id:10,
+    name:"Add Task",
+    path:"dashboard/Task",
+    role:"Admin"
+  },
+  {
+    id:11,
+    name:"View Task",
+    path:"dashboard/viewTask",
+    role:"Employee"
+  }
 ];

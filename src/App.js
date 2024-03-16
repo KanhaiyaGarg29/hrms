@@ -13,6 +13,8 @@ import ViewLeave from './components/ViewLeave';
 import ViewStatus from './components/ViewStatus';
 import DashboardHome from './components/DashboardHome';
 import EDashBoard from './components/EDashBoard';
+import AddTask from './components/AddTask';
+import ViewTask from './components/ViewTask';
 
 
 function App() {
@@ -33,6 +35,8 @@ function App() {
     <Route path="dashboard/viewAdmin" element={<AdminList/>}/>
     <Route path="dashboard/viewLeaves" element={<ViewLeave/>}/>
     <Route path="dashboard/viewStatus" element={<ViewStatus/>}/>
+    <Route path="dashboard/Task" element={<AddTask/>}></Route>
+    <Route path="dashboard/viewTask" element={<ViewTask/>}></Route>
     </Route>
 
     </Routes>

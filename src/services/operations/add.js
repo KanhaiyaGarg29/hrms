@@ -2,7 +2,7 @@ import { apiConnector } from "../apiConnector";
 import { endpoints } from "../apis";
 import { toast } from "react-hot-toast";
 
-const { ADD_API, ADD_CATEGORY_API, GET_CATEGORY, GET_EMPLOYEES,GET_ADMIN ,ADD_LEAVE,GET_LEAVE,UPDATE_LEAVE_STATUS,GET_PARTICULAR_LEAVE} = endpoints;
+const { ADD_API, ADD_CATEGORY_API, GET_CATEGORY, GET_EMPLOYEES,GET_ADMIN ,ADD_LEAVE,GET_LEAVE,UPDATE_LEAVE_STATUS,GET_PARTICULAR_LEAVE,ADD_TASK} = endpoints;
 
 export function addEmployee(
   name,
@@ -132,6 +132,31 @@ export function addLeave(
     } catch (error) {
       console.log(error);
       toast.error("Leave not submitted Succesfully");
+    }
+  };
+}
+
+export function addTask(
+  task,deadline,category
+  
+) {
+  return async () => {
+    try {
+      // console.log(task,deadline,category);
+      const response = await apiConnector("POST", ADD_TASK, {
+        task,deadline,category
+      });
+
+      console.log(response);
+
+      if (!response.data.success) {
+        throw new Error(response.data.message);
+      }
+      toast.success("Task Assigned Successful");
+     
+    } catch (error) {
+      console.log(error);
+      toast.error("Task is not assigned Succesfully");
     }
   };
 }
