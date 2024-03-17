@@ -26,3 +26,54 @@ exports.addTask=async(req,res)=>{
         })
     }
 }
+
+exports.getAllTasks=async(req,res)=>{
+    try{
+       
+        // const pendingleaves=await Leave.find({status:'pending'});
+        // const acceptedleaves=await Leave.find({status:'accepted'});
+        // const rejectedleaves=await Leave.find({status:'rejected'});
+        // const allLeaves = {
+        //     pending: pendingleaves,
+        //     accepted: acceptedleaves,
+        //     rejected: rejectedleaves
+        // };
+        const allTasks = await Task.find();
+        return res.status(200).json(
+            {
+                success:true,
+                data:allTasks,
+                message:"Tasks fetched successfully"
+            }
+           )
+    }catch(error){
+        console.error(error)
+        // Return 500 Internal Server Error status code with error message
+        return res.status(500).json({
+          success: false,
+          message: ` Failure Please Try Again`,
+        })
+    }
+}
+
+exports.getParticularTask=async(req,res)=>{
+    try{
+        const userCategory=req.params.userCategory;
+        // console.log(userCategory);
+        const task=await Task.find({category:userCategory});
+        return res.status(200).json(
+            {
+                success:true,
+                data:task,
+                message:"Leaves fetched successfully"
+            }
+           )
+    }catch(error){
+        console.error(error)
+        // Return 500 Internal Server Error status code with error message
+        return res.status(500).json({
+          success: false,
+          message: ` Failure Please Try Again`,
+        })
+    }
+}

@@ -15,6 +15,7 @@ import DashboardHome from './components/DashboardHome';
 import EDashBoard from './components/EDashBoard';
 import AddTask from './components/AddTask';
 import ViewTask from './components/ViewTask';
+import ETaskList from './components/ETaskList';
 
 
 function App() {
@@ -37,6 +38,7 @@ function App() {
     <Route path="dashboard/viewStatus" element={<ViewStatus/>}/>
     <Route path="dashboard/Task" element={<AddTask/>}></Route>
     <Route path="dashboard/viewTask" element={<ViewTask/>}></Route>
+    <Route path="dashboard/Etask" element={<ETaskList/>}></Route>
     </Route>
 
     </Routes>

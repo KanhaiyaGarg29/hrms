@@ -13,5 +13,7 @@ export const endpoints = {
     GET_LEAVE:BASE_URL+"/getLeaves",
     UPDATE_LEAVE_STATUS:BASE_URL+"/updateLeave",
     GET_PARTICULAR_LEAVE:BASE_URL+"/viewLeave",
-    ADD_TASK:BASE_URL+"/addTask"
+    ADD_TASK:BASE_URL+"/addTask",
+    GET_TASK:BASE_URL+"/viewTask",
+    GET_PARTICULAR_TASK:BASE_URL+"/etask"
   }

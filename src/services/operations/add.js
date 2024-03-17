@@ -2,7 +2,7 @@ import { apiConnector } from "../apiConnector";
 import { endpoints } from "../apis";
 import { toast } from "react-hot-toast";
 
-const { ADD_API, ADD_CATEGORY_API, GET_CATEGORY, GET_EMPLOYEES,GET_ADMIN ,ADD_LEAVE,GET_LEAVE,UPDATE_LEAVE_STATUS,GET_PARTICULAR_LEAVE,ADD_TASK} = endpoints;
+const { ADD_API, ADD_CATEGORY_API, GET_CATEGORY, GET_EMPLOYEES,GET_ADMIN ,ADD_LEAVE,GET_LEAVE,UPDATE_LEAVE_STATUS,GET_PARTICULAR_LEAVE,ADD_TASK,GET_TASK,GET_PARTICULAR_TASK} = endpoints;
 
 export function addEmployee(
   name,
@@ -176,6 +176,21 @@ export async function getLeaves() {
   }
 }
 
+export async function getTask() {
+  try {
+    const response = await apiConnector("GET", GET_TASK);
+    if (!response.data.success) {
+      throw new Error(response.data.message);
+    }
+    console.log(response);
+    return response.data.data;
+  } catch (error) {
+    console.error(error);
+    toast.error("Tasks not Fetched Successfully");
+    throw error;
+  }
+}
+
 
 export async function getParticularLeave(userId) {
   try {
@@ -188,6 +203,21 @@ export async function getParticularLeave(userId) {
   } catch (error) {
     console.error(error);
     toast.error("Leaves not Fetched Successfully");
+    throw error;
+  }
+}
+
+export async function getParticulartasks(userCategory) {
+  try {
+    const response = await apiConnector("GET",   `${GET_PARTICULAR_TASK}/${userCategory}`);
+    if (!response.data.success) {
+      throw new Error(response.data.message);
+    }
+    console.log(response);
+    return response.data.data;
+  } catch (error) {
+    console.error(error);
+    toast.error("Tasks not Fetched Successfully");
     throw error;
   }
 }

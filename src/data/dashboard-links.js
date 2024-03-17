@@ -66,6 +66,11 @@ export const sidebarLinks = [
     id:11,
     name:"View Task",
     path:"dashboard/viewTask",
+    role:"Admin"
+  },{
+    id:12,
+    name:"Task for the day",
+    path:"dashboard/Etask",
     role:"Employee"
   }
 ];
