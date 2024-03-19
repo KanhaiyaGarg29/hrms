@@ -4,7 +4,7 @@ const {login} =require("../controllers/Auth");
 const { addCategory, getAllCategory } = require("../controllers/Category");
 const { getAdmin } = require('../controllers/Employees');
 const { addLeave, getAllLeaves, updateLeaveStatus, getParticularLeave } = require('../controllers/Leave');
-const {addTask,getAllTasks,getParticularTask} = require("../controllers/Task")
+const {addTask,getAllTasks,getParticularTask,updateTaskStatus} = require("../controllers/Task")
 
 
 // Route for user login
@@ -19,5 +19,6 @@ router.get("/viewLeave/:userId",getParticularLeave);
 router.post("/addTask",addTask);
 router.get("/viewTask",getAllTasks);
 router.get("/etask/:userCategory",getParticularTask);
+router.put("/updateTaskStatus",updateTaskStatus);
 
 module.exports = router
