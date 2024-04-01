@@ -22,7 +22,7 @@ function ViewLeave() {
           }
         };
         fetchData();
-      }, []);
+      }, [leaveRequest]);
     
 
   return (

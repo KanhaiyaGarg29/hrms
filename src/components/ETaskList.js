@@ -24,7 +24,7 @@ function ETaskList() {
       }
     };
     fetchData();
-  }, []);
+  }, [tasks]);
 
   console.log(tasks);
   return (
@@ -44,7 +44,7 @@ function ETaskList() {
                 dispatch(updateTaskStatus(task._id, "in-progress"));
               }}
             >
-              Started
+              Start
             </button>
           </div>
         ))

@@ -13,7 +13,7 @@ function ViewTask(){
             setTasks({new:taskData.new || [] ,started:taskData.started|| [] ,finished:taskData.finished|| []});
            
           } catch (error) {
-            console.error('Error fetching employees:', error);
+            console.error('Error fetching tasks:', error);
           }
         };
         fetchData();
