@@ -1,0 +1,107 @@
+
+.jmycontainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: linear-gradient(to bottom,  #171738 , #6f72ff , #b7b8ff);
+
+}
+
+.jform-box{
+  width: 50%;
+  height: 70%;
+  background-color: rgba(0, 0, 0, 0.452);
+  padding: 40px;
+  border-radius: 40px;
+  box-shadow: 0 0 6px rgba(255, 255, 255, 0.73);
+  text-align: center;
+}
+
+.jmargin{
+  margin-top: 3%;
+}
+
+.jplaceholder{
+  color: rgb(35, 35, 35);
+  font-size: 14px;
+}
+
+.juser-image-container{
+  margin-bottom: 20px;
+}
+
+.juser-image {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+  opacity: 75%;
+}
+
+.jform {
+  display: flex;
+  flex-direction: column;
+}
+
+.jinput-group {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.jinput {
+  width: 37%;
+  padding: 5px;
+  border: 2px solid #948bff;
+  border-radius: 20px;
+  font-size: 16px;
+  color: rgb(0, 0, 0);
+  margin: 5px;
+}
+
+
+.jinput:focus {
+  outline: none;
+}
+
+.show-password-icon {
+  display: inline-block;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.jbutton {
+  width: 10%;
+  padding: 9px;
+  background-color: #ffffff;
+  color: #000000;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  margin-top: 20px;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.jbutton:hover {
+  background-color: #050031;
+  color: #ffffff;
+}
+
+.jlink {
+  text-align: center;
+  font-size: 14px;
+  color: rgb(255, 255, 255);
+}
+
+.jlink:hover {
+  color: rgb(167, 173, 255);
+}
+.jlogin{
+  color: rgb(255, 255, 255);
+  text-decoration: underline;
+  font-size:larger;
+}

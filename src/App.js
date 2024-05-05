@@ -1,13 +1,12 @@
 
-import './App.css';
 import {Route, Routes} from "react-router-dom";
 import Home from "./pages/Home";
-import Login from "./pages/Login";
-import AddEmployee from './components/AddEmployee';
+import Login from "./pages/Login/Login";
+import AddEmployee from './components/Employee/Add Employee/AddEmployee';
 import AddCategory from './components/AddCategory';
-import EmployeeList from './components/EmployeeList';
-import AdminList from './components/AdminList';
-import Dashboard from './pages/Dashboard';
+import EmployeeList from './components/Employee/Lists/EmployeeList';
+import AdminList from './components/Employee/Lists/AdminList';
+import Dashboard from './pages/DashBoard/Dashboard';
 import Leave from './components/Leave';
 import ViewLeave from './components/ViewLeave';
 import ViewStatus from './components/ViewStatus';
@@ -16,7 +15,7 @@ import EDashBoard from './components/EDashBoard';
 import AddTask from './components/AddTask';
 import ViewTask from './components/ViewTask';
 import ETaskList from './components/ETaskList';
-
+import ContactForm from './pages/Contact/ContactUs';
 
 function App() {
   
@@ -25,6 +24,7 @@ function App() {
     <Routes>
     <Route path="/" element={<Home/>} />
     <Route path="/login" element={<Login/>}/>
+    <Route path="/contact" element={<ContactForm/>}/>
    
     <Route element={<Dashboard/>}>
      <Route path="/dashboard/Ahome" element={<DashboardHome></DashboardHome>}></Route>

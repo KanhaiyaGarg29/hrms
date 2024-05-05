@@ -33,10 +33,12 @@ exports.getAllTasks=async(req,res)=>{
         const newTasks=await Task.find({status:'new'});
         const startedTasks=await Task.find({status:'in-progress'});
         const finishedTasks=await Task.find({status:'completed'});
+        const due=await Task.find({status:"due"});
         const allTasks = {
             new:newTasks,
             started:startedTasks,
-            finished:finishedTasks
+            finished:finishedTasks,
+            due:due
         };
         // const allTasks = await Task.find();
         return res.status(200).json(
@@ -63,11 +65,13 @@ exports.getParticularTask=async(req,res)=>{
         const newtasks=await Task.find({category:userCategory,status:"new"});
         const completedtasks=await Task.find({category:userCategory,status:"completed"});
         const startedtasks=await Task.find({category:userCategory,status:"in-progress"});
+        const due=await Task.find({category:userCategory,status:"due"});
         const task={
             new:newtasks,
            
             started:startedtasks,
-            completed:completedtasks
+            completed:completedtasks,
+            due:due
         }
         return res.status(200).json(
             {

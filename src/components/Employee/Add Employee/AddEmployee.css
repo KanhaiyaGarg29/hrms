@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
+
+.emp-image {
+  width: 50vh;
+  height: 52vh;
+  /* margin-right: 20px; */
+  float: left;
+  margin: 0;
+  ;
+}
+
+.emp-form {
+  /* border:#566172b1 2px solid; */
+  margin-left: 55%;
+  width: 60vh;
+  height: 60vh;
+  padding: 20px;
+  border-radius: 15px;
+  background-color:rgba(44, 44, 44, 0.825);
+  animation: slideIn 1s ease-out;
+  /* box-shadow: 2px 2px 4px 4px rgba(79, 79, 79, 0.756); */
+}
+
+.emp-container {
+  margin-left: 250px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color:#f1f2ff;
+  background-image: url(../../../assets/download47.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* animation: slideIn 1s ease-out; */
+}
+
+.addemp-heading {
+  margin: 15px;
+  font-family: "Roboto", sans-serif;
+  color: white;
+  font-size: 25px;
+  text-decoration: underline;
+}
+
+.emp-inputGroup {
+  margin-bottom: 20px;
+  animation: slideIn 1s ease-out;
+}
+
+.emp-input{
+  width: 80%;
+  padding: 9px;
+  border-radius: 5px;
+  border: none;
+  background-color: #ffffff;
+  margin-left: 10px;
+  transition: all 0.3s ease;
+}
+
+.emp-select {
+  width: 80%;
+  padding: 9px;
+  border-radius: 5px;
+  border: none;
+  background-color: #ffffff;
+  margin-left: 10px;
+  transition: 0.3s ease;
+}
+
+.empbutton {
+  margin-left: 10px;
+  /* height: 10%; */
+  width: 20%;
+  padding: 9px;
+  background-color:#0a0a40;
+  color: #ffffff;
+  border: 2px solid rgb(130, 130, 130);
+  border-radius: 13px;
+  cursor: pointer;
+  /* margin-top: 20px; */
+  font-size: 15px;
+  transition: background-color 0.3s ease;
+  animation: slideIn 1s ease-out;
+}
+
+.empbutton:hover {
+  background-color: #393975;
+  color: #ffffff;
+  transition: background-color 0.3s ease;
+}
+
+
+.emp-select {
+  width: 84%;
+  padding: 9px;
+  border-radius: 10px;
+  border: none;
+  background-color: #ffffff;
+  /* background-color: #ffffff; */
+  color: #333333;
+}
+
+
+.emp-select option {
+  background-color: #ffffff;
+  color: #333333;
+}
+
+.emp-select:hover {
+  border-color: #9a9fff;
+}
+
+
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}

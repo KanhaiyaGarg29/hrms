@@ -3,7 +3,7 @@ const router = express.Router();
 const {login} =require("../controllers/Auth");
 const { addCategory, getAllCategory } = require("../controllers/Category");
 const { getAdmin } = require('../controllers/Employees');
-const { addLeave, getAllLeaves, updateLeaveStatus, getParticularLeave } = require('../controllers/Leave');
+const { addLeave, getAllLeaves, updateLeaveStatus, getParticularLeave, getLeaveType } = require('../controllers/Leave');
 const {addTask,getAllTasks,getParticularTask,updateTaskStatus} = require("../controllers/Task")
 
 
@@ -14,6 +14,7 @@ router.get("/getCategory",getAllCategory);
 router.get("/getAdmin",getAdmin);
 router.post("/addLeave",addLeave);
 router.get("/getLeaves",getAllLeaves);
+router.get("/getLeaveType",getLeaveType);
 router.put("/updateLeave",updateLeaveStatus);
 router.get("/viewLeave/:userId",getParticularLeave);
 router.post("/addTask",addTask);

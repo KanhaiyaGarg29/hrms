@@ -1,0 +1,205 @@
+/* .sidebar {
+    color: #fff;
+    width: 250px;
+    padding-top: 18px;
+    padding-left: 15px;
+    height: 100vh;
+    background-image: linear-gradient(#36377e, #8487FF, #dedeff);
+    border-top-right-radius: 60px;
+    font-size: 18px;
+    font-family: "Roboto Slab", serif;
+  }
+  
+  .sidebar a {
+    font-size: 16px;
+    color: #fff;
+    display: block;
+    padding: 14px;
+    padding-left: 15px;
+   
+    text-decoration: none;
+
+  }
+  
+  .sidebar a:hover {
+    color: #00072c;
+   
+    outline: none;
+    position: relative;
+    background-color: #fff;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+  }
+  
+  .sidebar a i {
+    margin-right: 5px;
+  }
+  
+  .sidebar a:hover::after {
+    content: "";
+    position: absolute;
+    background-color: transparent;
+    bottom: 100%;
+    right: 0;
+    height: 35px;
+    width: 35px;
+    border-bottom-right-radius: 18px;
+    box-shadow: 0 20px 0 0 #fff;
+  }
+  
+  .sidebar a:hover::before {
+    content: "";
+    position: absolute;
+    background-color: transparent;
+    top: 38px;
+    right: 0;
+    height: 35px;
+    width: 35px;
+    border-top-right-radius: 18px;
+    box-shadow: 0 -20px 0 0 #fff;
+  }
+  
+  .sidebar p {
+    margin: 0;
+    padding: 40px 0;
+  }
+  .sidebar-nav ul{
+    font-size: 16px;
+    cursor: pointer;
+  }
+  .logoutButton {
+    width: 50%;
+    margin-top: auto;
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .logoutButton:hover {
+    background-color: #303186;
+    border-radius: 20px;
+    transition: background-color 0.3s ease;
+  }
+
+  .dropdown{
+    font-size: 16px;
+    font-weight:normal;
+    color: #fff;
+    display: block;
+    padding-left: 15px;
+    padding-bottom: 8px;
+    cursor: pointer;
+    
+  }
+
+  .dropdown-icon{
+    padding: 5px;
+  }
+  .sublinks{
+    padding-top: 10px;
+  } */
+
+  .sidebar {
+    color: #fff;
+    width: 250px;
+    padding-top: 18px;
+    padding-left: 15px;
+    height:100vh;
+    background-image: linear-gradient( #070046, #070046); 
+
+    border-top-right-radius: 60px;
+    font-size: 18px;
+    font-family: "Roboto Slab", serif;
+    position: fixed; 
+  }
+  
+  .sidebar a {
+    font-size: 16px;
+    color: #fff;
+    display: block;
+    padding: 12px;
+    padding-left: 30px;
+    text-decoration: none;
+  }
+  
+  .sidebar a:hover {
+    color: #00072c;
+    /* background: #fff; */
+    outline: none;
+    position: relative;
+    background-color: #fff;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+  }
+  
+  .sidebar a i {
+    margin-right: 5px;
+  }
+  
+  .sidebar a:hover::after {
+    content: "";
+    position: absolute;
+    /* background-color: transparent; */
+    bottom: 100%;
+    right: 0;
+    height: 35px;
+    width: 35px;
+    border-bottom-right-radius: 18px;
+    box-shadow: 0 20px 0 0 #fff;
+  }
+  
+  .sidebar a:hover::before {
+    content: "";
+    position: absolute;
+    background-color: transparent;
+    top: 38px;
+    right: 0;
+    height: 35px;
+    width: 35px;
+    border-top-right-radius: 18px;
+    box-shadow: 0 -20px 0 0 #fff;
+  }
+  
+  .sidebar p {
+    margin: 0;
+    padding: 40px 0;
+  }
+  
+  .logoutButton {
+    width: 50%;
+    margin-top: auto;
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .logoutButton:hover {
+    background-color: #b1eaff;
+    color: #070046;
+    border-radius: 20px;
+    transition: background-color 0.3s ease;
+  }
+
+  .dropdown{
+    font-size: 16px;
+    font-weight:normal;
+    color: #fff;
+    display: block;
+    padding-left: 15px;
+    padding-bottom: 8px;
+    cursor: pointer;
+    
+  }
+
+  .dropdown-icon{
+    padding: 5px;
+  }
+  .sublinks{
+    padding-top: 10px;
+  } 

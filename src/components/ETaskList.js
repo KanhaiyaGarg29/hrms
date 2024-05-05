@@ -4,7 +4,7 @@ import { getParticulartasks } from "../services/operations/add";
 import { updateTaskStatus } from "../services/operations/add";
 
 function ETaskList() {
-  const [tasks, setTasks] = useState({ new: [], started: [], finished: [] });
+  const [tasks, setTasks] = useState({ new: [], started: [], finished: [] ,due:[]});
   // const [tasks, setTasks] = useState([]);
   const { user } = useSelector((state) => state.profile);
   const dispatch = useDispatch();
@@ -18,7 +18,22 @@ function ETaskList() {
           new: tasksData.new || [],
           started: tasksData.started || [],
           finished: tasksData.completed || [],
+          due:tasksData.due || []
         });
+        
+        tasksData.new.forEach(task=>{
+          if(new Date(task.deadline) < new Date()){
+            dispatch(updateTaskStatus(task._id, "due"));
+          }
+        })
+
+        tasksData.started.forEach(task=>{
+          if(new Date(task.deadline) < new Date()){
+            dispatch(updateTaskStatus(task._id, "due"));
+          }
+        })
+  
+
       } catch (error) {
         console.error("Error fetching tasks:", error);
       }
@@ -26,7 +41,9 @@ function ETaskList() {
     fetchData();
   }, [tasks]);
 
-  console.log(tasks);
+   
+
+
   return (
     <>
       {tasks.new.length === 0 ? (
@@ -83,6 +100,21 @@ function ETaskList() {
           </div>
         ))
       )}
+
+      
+{tasks.due.length === 0 ? (
+        <p>No due tasks</p>
+      ) : (
+        tasks.due.map((task) => (
+          <div>         
+            {task.task}
+
+            <p>{task.category}</p>
+            <p>{task.deadline.substring(0, 10)}</p>
+          </div>
+        ))
+      )}
+
     </>
   );
 }

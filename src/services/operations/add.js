@@ -2,7 +2,7 @@ import { apiConnector } from "../apiConnector";
 import { endpoints } from "../apis";
 import { toast } from "react-hot-toast";
 
-const { ADD_API, ADD_CATEGORY_API, GET_CATEGORY, GET_EMPLOYEES,GET_ADMIN ,ADD_LEAVE,GET_LEAVE,UPDATE_LEAVE_STATUS,GET_PARTICULAR_LEAVE,ADD_TASK,GET_TASK,GET_PARTICULAR_TASK,UPDATE_TASK_STATUS} = endpoints;
+const { ADD_API, ADD_CATEGORY_API, GET_CATEGORY, GET_EMPLOYEES,GET_ADMIN ,ADD_LEAVE,GET_LEAVE,UPDATE_LEAVE_STATUS,GET_PARTICULAR_LEAVE,ADD_TASK,GET_TASK,GET_PARTICULAR_TASK,UPDATE_TASK_STATUS,GET_LEAVE_TYPE} = endpoints;
 
 export function addEmployee(
   name,
@@ -30,7 +30,7 @@ export function addEmployee(
         throw new Error(response.data.message);
       }
       toast.success("Added Successful");
-      navigate("/");
+      navigate("/dashboard/Ahome");
     } catch (error) {
       console.log(error);
       toast.error("Not Added Succesfully");
@@ -52,7 +52,7 @@ export function addCategory(categoryName, categoryDescription, navigate) {
         throw new Error(response.data.message);
       }
       toast.success(" Category Added Successful");
-      navigate("/");
+      navigate("/dashboard/Ahome");
     } catch (error) {
       console.log(error);
       toast.error(" Category Not Added Succesfully");
@@ -110,7 +110,8 @@ export function addLeave(
   name,
   startDate,
   endDate,
-  leaveType
+  leaveType,
+  category
 ) {
   return async () => {
     try {
@@ -119,7 +120,8 @@ export function addLeave(
         name,
         startDate,
         endDate,
-        leaveType
+        leaveType,
+        category
       });
 
       console.log(response);
@@ -207,13 +209,28 @@ export async function getParticularLeave(userId) {
   }
 }
 
+export async function getLeaveType(){
+  try{
+    const response = await apiConnector("GET", GET_LEAVE_TYPE);
+    if (!response.data.success) {
+      throw new Error(response.data.message);
+    }
+    console.log(response);
+    return response.data.data;
+  } catch (error) {
+    console.error(error);
+    toast.error("Leaves Fetched Successfully");
+    throw error;
+  }
+}
+
 export async function getParticulartasks(userCategory) {
   try {
     const response = await apiConnector("GET",   `${GET_PARTICULAR_TASK}/${userCategory}`);
     if (!response.data.success) {
       throw new Error(response.data.message);
     }
-    console.log(response);
+   
     return response.data.data;
   } catch (error) {
     console.error(error);

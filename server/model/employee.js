@@ -25,11 +25,12 @@ const userSchema = mongoose.Schema({
         type: String,
         required:true
     },
-    // category_id: {
-    //     type: mongoose.Schema.Types.ObjectId,
-    //     ref: "category",
-    //   },
-
+    leaves:[
+        {
+            type:mongoose.Schema.ObjectId,
+            ref:'Leave',
+        }
+    ]
 },{timestamps:true})
 
 const userModel = mongoose.model("userData",userSchema);

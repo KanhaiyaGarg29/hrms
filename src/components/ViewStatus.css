@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+.viewstatus-container {
+  padding: 20px;
+  margin-left: 250px;
+  background-color: rgb(231, 252, 255);
+  border-radius: 20px;
+  font-size: 12px;
+  height: 100vh;
+  font-family: "Roboto Slab", serif;
+}
+
+.viewstatus-heading{
+    text-decoration:underline ;
+  margin-top: 25px;
+  margin-bottom: 10px;
+}
+
+.viewstatus-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .viewstatus-table th,
+  .viewstatus-table td {
+    padding: 10px;
+    border: none;
+    text-align: left;
+  }
+  
+  .viewstatus-table th {
+    background-color: rgba(12, 3, 56, 0.725);
+    color: white;
+  }
+  
+  .viewstatus-table tbody tr {
+    transition: background-color 0.2s ease;
+    animation: slideIn 1.3s ease;
+  }
+  
+  .viewstatus-table tbody tr:nth-child(even) {
+    background-color: #c5c5c5bf;
+  }
+  
+  .viewstatus-table tbody tr:nth-child(odd) {
+    background-color: #ffffff8d;
+  }
+  
+
+  @keyframes slideIn {
+    0% {
+      opacity: 0;
+      transform: translateY(-100%);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0); 
+    }
+  }

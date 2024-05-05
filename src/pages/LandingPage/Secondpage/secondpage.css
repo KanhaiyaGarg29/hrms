@@ -1,0 +1,92 @@
+.secondMainDiv{
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+}
+
+.whowe{
+    font-size: 1.3rem;
+    /* padding-top: 2rem; */
+    color: grey;
+}
+
+.whych{
+    font-size: 3rem;
+    /* padding-top: 2.5rem; */
+    font-weight:600;
+    color: black;
+    margin-top: 1rem;
+}
+
+.servi{
+    font-size:3rem;
+    font-weight:510;
+    color: #9441fb;
+    margin-top: -3rem;
+}
+
+.fourthdiv{
+    /* padding-top: 6rem; */
+    display: flex;
+    width: 100%;
+}
+
+.fdivfirst{
+    width: 50%;
+    
+}
+
+.hr2image{
+    background: url(/public/assets/hr2.png);
+    height: 50rem;
+    background-size: cover;
+    scale: 70%;
+    border-radius: 50px;
+    /* border: 10px solid cyan; */
+    box-shadow: 5px 5px 50px #9441fb;
+    margin-top: -3rem;
+}
+
+.fdivsecond{
+    width: 50%;
+    
+}
+
+.par1{
+    padding-top: 5rem;
+    color: grey;
+    font-size: 1.3rem;
+}
+
+.par2{
+    padding-top: 0.1rem;
+    font-size: 1.3rem;
+}
+
+.pfirst{
+    font-weight: bold;
+    color: black;
+    /* padding-bottom: 0.8rem; */
+    
+}
+
+.psecond{
+    color: grey;
+}
+
+.learnMore{
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.par3{
+    /* padding-top: 1.8rem; */
+    font-size: 1.3rem;
+}
+
+.par4{
+    padding-top: 1rem;
+    font-size: 1rem;
+    color: grey;
+}

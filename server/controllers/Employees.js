@@ -2,11 +2,11 @@ const userModel = require("../model/employee");
 
 exports.getAllEmployees=async(req,res)=>{
     try{
-       
         const user=await userModel.find({ role: { $ne: "Admin" } }).select('-password');
         return res.status(200).json(
             {
                 success:true,
+                // count: count,
                 data:user,
                 message:"Employees fetched successfully"
             }
