@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { getTask } from '../services/operations/add';
+import "./ViewTask.css"
 
 function ViewTask() {
     const [tasks, setTasks] = useState({ new: [], started: [], finished: [], due: [] });
@@ -22,7 +23,7 @@ function ViewTask() {
     }, []);
 
     return (
-        <div>
+        <div className='viewtask-container'>
             <p>TaskList</p>
 
             {tasks.new.length === 0 ? (

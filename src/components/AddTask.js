@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux"
 import { useSelector } from 'react-redux';
 import { addTask } from "../services/operations/add";
 import { getCategory } from "../services/operations/add"
+import "./AddTask.css"
 
 function AddTask(){
 
@@ -42,7 +43,7 @@ function AddTask(){
       }
 
     return(
-       <div>
+       <div className="addtask-container">
         <form onSubmit={handleOnSubmit}>
         <label>
           <p>
