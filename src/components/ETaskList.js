@@ -2,6 +2,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useState, useEffect } from "react";
 import { getParticulartasks } from "../services/operations/add";
 import { updateTaskStatus } from "../services/operations/add";
+import "./ETaskList.css"
 
 function ETaskList() {
   const [tasks, setTasks] = useState({ new: [], started: [], finished: [] ,due:[]});
@@ -45,7 +46,7 @@ function ETaskList() {
 
 
   return (
-    <>
+    <div className="etask-container">
       {tasks.new.length === 0 ? (
         <p>No new tasks</p>
       ) : (
@@ -115,7 +116,7 @@ function ETaskList() {
         ))
       )}
 
-    </>
+    </div>
   );
 }
 
