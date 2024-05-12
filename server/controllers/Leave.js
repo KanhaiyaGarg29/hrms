@@ -72,7 +72,7 @@ exports.getAllLeaves=async(req,res)=>{
 exports.getParticularLeave=async(req,res)=>{
     try{
         const userId=req.params.userId;
-        console.log(userId);
+      
         const leave=await Leave.find({userId:userId});
         return res.status(200).json(
             {

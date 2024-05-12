@@ -99,7 +99,7 @@ function EmployeeList() {
             <div className="adminlist-details">
               <p><strong>Email:</strong> {employee.email}</p>
               <p><strong>Address:</strong> {employee.address}</p>
-              <p><strong>Category:</strong> {employee.category}</p>
+             
               <p><strong>Role:</strong> {employee.role}</p>
             </div>
           </div>
