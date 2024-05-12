@@ -44,9 +44,9 @@ function AddTask(){
 
     return(
        <div className="addtask-container">
-        <form onSubmit={handleOnSubmit}>
+        <form onSubmit={handleOnSubmit} id="add-form">
         <label>
-          <p>
+          <p className='addingp'>
             Task <sup>*</sup>
           </p>
           <textarea
@@ -58,7 +58,7 @@ function AddTask(){
         </label>
         <br/>
         <label>
-          <p>
+          <p className='addingp'>
             DeadLine  <sup>*</sup>
           </p>
           <input
@@ -70,7 +70,7 @@ function AddTask(){
           />
         </label>
         <label>
-        <p>Category *</p>
+        <p className='addingp'>Category *</p>
         <select name="category" value={category} onChange={handleOnChange}>
           <option value="">Select Category</option>
           {categories.map((category) => (

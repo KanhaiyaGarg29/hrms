@@ -47,74 +47,121 @@ function ETaskList() {
 
   return (
     <div className="etask-container">
-      {tasks.new.length === 0 ? (
-        <p>No new tasks</p>
+    <h2>TaskList</h2>
+    <div>{tasks.new.length === 0 ? (
+        <p className='etaskp'>No new tasks</p>
       ) : (
-        tasks.new.map((task) => (
-          <div key={task._id}>
-          
-            {task.task}
-
-            <p>{task.category}</p>
-            <p>{task.deadline.substring(0, 10)}</p>
-            <button
+        <table className="task-table">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Category</th>
+                <th>End Date</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+            {tasks.new.map((task) => (
+                <tr key={task.id}>
+                  <td>{task.task}</td>
+                  <td>{task.category}</td>
+                  <td>{task.deadline.substring(0, 10)}</td>
+                  <td><button
               onClick={() => {
                 dispatch(updateTaskStatus(task._id, "in-progress"));
               }}
             >
               Start
-            </button>
-          </div>
-        ))
+            </button></td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
       )}
-
-      {tasks.started.length === 0 ? (
-        <p>No started tasks</p>
+      </div>
+      
+      <h2>Started Tasks</h2>
+      <div>{tasks.started.length === 0 ? (
+        <p className='etaskp'>No started tasks</p>
       ) : (
-        tasks.started.map((task) => (
-          <div>
-          
-            {task.task}
-
-            <p>{task.category}</p>
-            <p>{task.deadline.substring(0, 10)}</p>
-            <button
+        <table className="task-table">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Category</th>
+                <th>End Date</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+            {tasks.started.map((task) => (
+                <tr key={task.id}>
+                  <td>{task.task}</td>
+                  <td>{task.category}</td>
+                  <td>{task.deadline.substring(0, 10)}</td>
+                  <td><button
               onClick={() => {
                 dispatch(updateTaskStatus(task._id, "completed"));
               }}
             >
               Finished
-            </button>
-          </div>
-        ))
+            </button></td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
       )}
-
-      {tasks.finished.length === 0 ? (
-        <p>No finished tasks</p>
-      ) : (
-        tasks.finished.map((task) => (
-          <div>         
-            {task.task}
-
-            <p>{task.category}</p>
-            <p>{task.deadline.substring(0, 10)}</p>
-          </div>
-        ))
-      )}
-
+      </div>
       
-{tasks.due.length === 0 ? (
-        <p>No due tasks</p>
+      <h2>Finished Tasks</h2>
+      <div>{tasks.finished.length === 0 ? (
+        <p className='etaskp'>No finished tasks</p>
       ) : (
-        tasks.due.map((task) => (
-          <div>         
-            {task.task}
-
-            <p>{task.category}</p>
-            <p>{task.deadline.substring(0, 10)}</p>
-          </div>
-        ))
+        <table className="task-table">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Category</th>
+                <th>End Date</th>
+              </tr>
+            </thead>
+            <tbody>
+            {tasks.finished.map((task) => (
+                <tr key={task.id}>
+                  <td>{task.task}</td>
+                  <td>{task.category}</td>
+                  <td>{task.deadline.substring(0, 10)}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
       )}
+</div>
+      
+     <h2>Due Tasks</h2>
+     <div>{tasks.due.length === 0 ? (
+        <p className='etaskp'>No due tasks</p>
+      ) : (
+        <table className="task-table">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Category</th>
+                <th>End Date</th>
+              </tr>
+            </thead>
+            <tbody>
+            {tasks.due.map((task) => (
+                <tr key={task.id}>
+                  <td>{task.task}</td>
+                  <td>{task.category}</td>
+                  <td>{task.deadline.substring(0, 10)}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+      )}
+</div> 
 
     </div>
   );
