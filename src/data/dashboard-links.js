@@ -24,12 +24,6 @@ export const sidebarLinks = [
     role: "Admin",
   },
   {
-    id: 5,
-    name: "Add Category",
-    path: "dashboard/category",
-    role: "Admin",
-  },
-  {
     id: 6,
     name: "Leave",
     path: "dashboard/askLeave",
