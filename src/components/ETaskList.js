@@ -66,7 +66,7 @@ function ETaskList() {
                   <td>{task.task}</td>
                   <td>{task.category}</td>
                   <td>{task.deadline.substring(0, 10)}</td>
-                  <td><button
+                  <td><button className="task-btns"
               onClick={() => {
                 dispatch(updateTaskStatus(task._id, "in-progress"));
               }}
@@ -99,7 +99,7 @@ function ETaskList() {
                   <td>{task.task}</td>
                   <td>{task.category}</td>
                   <td>{task.deadline.substring(0, 10)}</td>
-                  <td><button
+                  <td><button className="task-btns"
               onClick={() => {
                 dispatch(updateTaskStatus(task._id, "completed"));
               }}

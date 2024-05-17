@@ -18,7 +18,7 @@ h2{
     animation: slideIn 1.3s ease;
 }
 
-button{
+.task-btns{
     font-size: 1.15rem;
     padding:3px 15px;
     color: aliceblue;
@@ -28,7 +28,7 @@ button{
     background-color:rgba(22, 8, 92, 0.793);
 }
 
-button:hover{
+.task-btns:hover{
     cursor: pointer;
     background-color:rgba(40, 25, 111, 0.793);
 }
