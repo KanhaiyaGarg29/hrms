@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import { getAdmin } from "../../services/operations/add";
 import { Pie } from "react-chartjs-2";
 import { Chart, ArcElement } from "chart.js";
+import "../DashBoardHome.css"
 Chart.register(ArcElement);
 
 function Employee() {
@@ -40,20 +41,29 @@ function Employee() {
       {
         data: [admin.length, employees.length],
         backgroundColor: [
-          "rgba(255, 99, 132, 0.6)", // Red for Admins
-          "rgba(54, 162, 235, 0.6)", // Blue for Employees
+          "rgba(255, 99, 132, 1)", // Red for Admins
+          "rgba(54, 162, 235, 1)", // Blue for Employees
         ],
       },
     ],
   };
   return (
     <div>
-      <div>
+      <div className="pie-container">
+        <div className="pie-content">
+           <div>
         <p>Total Employees</p>
-        {employees.length}
+        <p>{employees.length}</p>
+        </div>
+        <div>
         <p>Total Admin</p>
-        {admin.length}
-        <div style={{ width: "300px", height: "200px" }}>
+        <p>{admin.length}</p>
+           </div>
+        </div>
+       
+       
+        
+        <div className="pie-graph" style={{ width: "200px", height: "200px" }}>
           <Pie data={data} />
         </div>
       </div>

@@ -2,6 +2,7 @@ import { useState ,useEffect} from "react"
 import { getTask } from '../../services/operations/add';
 import Chart from "chart.js/auto";
 import { Bar } from "react-chartjs-2";
+import "../DashBoardHome.css"
 import { CategoryScale } from "chart.js";
 Chart.register(CategoryScale);
 
@@ -28,10 +29,10 @@ function Tasks() {
         datasets: [{
             label: 'Tasks',
             backgroundColor: [
-                'rgba(255, 99, 132, 0.5)',
-                'rgba(255, 159, 64, 0.5)',
-                'rgba(255, 205, 86, 0.5)',
-                'rgba(75, 192, 192, 0.5)',
+                'rgba(255, 99, 132, 1)',
+                'rgba(255, 159, 64, 1)',
+                'rgba(255, 205, 86, 1)',
+                'rgba(75, 192, 192, 1)',
               ],
           
             data: [tasks.new.length, tasks.started.length, tasks.finished.length, tasks.due.length]
@@ -39,10 +40,13 @@ function Tasks() {
     };
 
   return (
-    <div style={{ position: 'relative', height: '400px', width: '600px' }}>
-    <h2>Tasks</h2>
+    <div className="task-graph">
+ <div style={{ position: 'relative', height: '180px', width: '350px' }}>
+    <h2 style={{textDecoration:'none'}}>Tasks</h2>
     <Bar data={data} />
 </div>
+    </div>
+   
   )
 }
 

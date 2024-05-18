@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { login } from "../../services/operations/auth";
 import "./Login.css"
+import { IoMdArrowBack } from "react-icons/io";
 import userImage from "../../assets/download7.jpg"
 
 function Login() {
@@ -37,6 +38,8 @@ function Login() {
     <div className="jmycontainer">
       <div className="jform-box">
         <div className="jmargin">
+        <div className="back-icon"> <IoMdArrowBack color="white" fontSize={20}/></div>
+        <div className="back-icon-content" onClick={()=>{navigate("/")}}>Back to Home</div>
           <div className="juser-image-container">
             <img src={userImage} alt="User" className="juser-image" />
           </div>

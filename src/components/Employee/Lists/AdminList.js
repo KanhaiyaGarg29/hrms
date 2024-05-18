@@ -41,7 +41,7 @@
 import React from 'react'
 import { useState ,useEffect} from "react"
 import { getAdmin } from '../../../services/operations/add'
- import empimagee from "../../../assets/download64.jpg"
+ import empimagee from "../../../assets/admin1.jpg"
 import './AdminList.css';
 
 

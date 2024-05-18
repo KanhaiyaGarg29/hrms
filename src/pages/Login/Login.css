@@ -39,6 +39,17 @@
   opacity: 75%;
 }
 
+.back-icon{
+  margin-left: -45rem;
+  color: white;
+  padding-left: 20px;
+}
+.back-icon-content{
+  margin-left: -37rem;
+  color: white;
+  padding-left: 20px;
+  margin-top: -1.5rem;
+}
 .jform {
   display: flex;
   flex-direction: column;

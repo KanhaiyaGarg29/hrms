@@ -3,6 +3,7 @@ import { getLeaveType } from '../../services/operations/add';
 import { getCategory } from "../../services/operations/add";
 import Chart from "chart.js/auto";
 import { Bar } from "react-chartjs-2";
+import "../DashBoardHome.css"
 import { CategoryScale } from "chart.js";
 Chart.register(CategoryScale);
 
@@ -41,17 +42,23 @@ function Leaves() {
         datasets: [{
             label: 'Number of Leaves',
             data: categories.map(category => category.leavesArray.length),
-            backgroundColor: 'rgba(54, 162, 235, 0.6)', // Adjust as needed
+            backgroundColor: [ 'rgba(54, 162, 235, 1)',
+            'rgba(255, 159, 64, 1)',
+        'rgba(255, 205, 86, 1)',
+        'rgba(75, 192, 192, 1)',], // Adjust as needed
             borderColor: 'rgba(54, 162, 235, 1)', // Adjust as needed
             borderWidth: 1
         }]
     };
 
   return (
-    <div style={{ position: 'relative', height: '400px', width: '600px' }}>
-    <h2>Leaves</h2>
+    <div className="leave-graph">
+           <div  style={{ position: 'relative', height: '200px', width: '400px'}}>
+    <h2 style={{textDecoration:'none'}}>Leaves</h2>
     <Bar data={chartData} />
      </div>
+    </div>
+
   )
 }
 
