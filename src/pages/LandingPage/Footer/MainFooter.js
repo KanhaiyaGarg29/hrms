@@ -28,7 +28,7 @@ function Footer() {
                 <li><a href="#workhere">Why Work Wave</a></li>
                 <li><a href="/contact">Contact</a></li>
                 <li><a href="#review">Reviews</a></li>
-                <li><a href="/faq">FAQ</a></li>
+                <li><a href="#faq">FAQ</a></li>
              </ul>
 
             </div>

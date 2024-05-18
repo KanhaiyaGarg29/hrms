@@ -1,0 +1,42 @@
+.fourth-container{
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: row;
+    padding: 0 6rem;
+}
+.faq-container {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin-bottom: 4rem;
+  }
+.faq-container h3{
+    font-size: 2rem;
+}
+.faq-container .faq-content{
+    margin-bottom: 2rem;
+    color: rgb(114, 114, 114);
+}
+
+.faq-image-container{
+    background: url("../../../assets/download47.jpg");
+    background-size: cover;
+    height:25em;
+    width: 40%;
+    box-shadow: 5px 5px 50px #9441fb;
+    border-radius: 20px;
+    /* border: 2px solid red; */
+    margin-top: 1.9rem;
+    margin-left:5.4rem;
+}
+.MuiAccordion-root {
+    margin-bottom: 10px;
+    border: 1px solid #e0e0e0;
+  }
+
+  .MuiAccordionSummary-root:hover {
+    background-color: #f8f5f5;
+  }
+  .MuiAccordionDetails-root {
+    color: rgb(146, 123, 123);
+  }
