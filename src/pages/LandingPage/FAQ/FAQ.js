@@ -10,7 +10,8 @@ import fimage from "../../../assets/download47.jpg"
 
 export default function FAQ() {
   return (
-    <div className="fourth-container" id="faq">
+    <div className="fourth-container" id="faq" data-aos="fade-up"
+    data-aos-anchor-placement="top-center" data-aos-duration="1000">
     <div className="faq-container">
       <div>
         <h3>Combine all your HR Systems into one platform</h3>

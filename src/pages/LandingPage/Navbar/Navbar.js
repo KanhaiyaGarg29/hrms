@@ -10,8 +10,8 @@ export const Navbar = () => {
   };
 
   return (
-    <nav className="navbar">
-      <div class="ocean">
+<nav className="navbar" data-aos="zoom-out-down" data-aos-duration="1000">
+  <div class="ocean">
   <div class="wave"></div>
   <div class="wave"></div>
   <div class="wave"></div>
@@ -29,11 +29,11 @@ export const Navbar = () => {
             <li>
               <a href="/">Home</a>
             </li>
-            <li>
+            {/* <li>
               <a href="/projects">Projects</a>
-            </li>
+            </li> */}
             <li>
-              <a href="/about">About</a>
+              <a href="/">About</a>
             </li>
             <li>
               <a href="/contact">Contact</a>

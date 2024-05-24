@@ -11,7 +11,6 @@ function Dashboard() {
       <Sidebar />
       <div className="content-container">
         <div className="content">
-       
           <Outlet />
         </div>
       </div>

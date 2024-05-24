@@ -3,7 +3,7 @@ import './secondpage.css';
 
 const secondpage = () => {
   return (
-    <div className="secondMainDiv" id="workhere">
+    <div className="secondMainDiv" id="workhere" data-aos="zoom-in" data-aos-duration="800">
         <div className="firstdiv">
             <p className="whowe">WHO WE ARE</p>
         </div>

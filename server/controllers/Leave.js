@@ -118,11 +118,12 @@ exports.getLeaveType=async(req,res)=>{
         // const users=await User.find({}).aggregate.group({ _id: "$categoryName" });
 
         // console.log(users)
-        const sickLeave=await Leave.find({leaveType:"Sick Leave"})
-        const annualLeave=await Leave.find({leaveType:"Annual Leave"})
+        const userId=req.params.userId;
+        const acceptedleaves=await Leave.find({userId:userId,status:"accepted"})
+        const rejectedleaves=await Leave.find({userId:userId,status:"accepted"})
         const leaves={
-            sick:sickLeave,
-            annual:annualLeave
+            acceptedleaves:acceptedleaves,
+            rejectedleaves:rejectedleaves
         }
         return res.status(200).json({
             success:true,

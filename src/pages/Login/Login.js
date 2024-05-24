@@ -38,8 +38,8 @@ function Login() {
     <div className="jmycontainer">
       <div className="jform-box">
         <div className="jmargin">
-        <div className="back-icon"> <IoMdArrowBack color="white" fontSize={20}/></div>
-        <div className="back-icon-content" onClick={()=>{navigate("/")}}>Back to Home</div>
+        <div className="back-icon"> <IoMdArrowBack color="white" fontSize={20} cursor="pointer"/></div>
+        <div className="back-icon-content" onClick={()=>{navigate("/")}} style={{cursor:"pointer"}}>Back to Home</div>
           <div className="juser-image-container">
             <img src={userImage} alt="User" className="juser-image" />
           </div>

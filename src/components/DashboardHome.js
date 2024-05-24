@@ -20,8 +20,6 @@ function DashboardHome() {
         <Category />
         <Leaves/>
         </div>
-       
-       
       </div>
     </div>
   );

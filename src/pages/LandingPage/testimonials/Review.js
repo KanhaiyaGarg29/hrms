@@ -34,6 +34,8 @@ const Review = () => {
 
   return <article className="review" id="review">
      
+       <div data-aos="fade-left" data-aos-easing="linear"
+        data-aos-duration="900">
        <p className='review-heading'>Hear from our customers</p>
       
       <div className="button-container">
@@ -47,6 +49,7 @@ const Review = () => {
       </div>
       <h4 className="author">{name}</h4>
       <p className="job">{job}</p>
+       </div>
     
      </article>;
 };

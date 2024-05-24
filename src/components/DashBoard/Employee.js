@@ -60,9 +60,6 @@ function Employee() {
         <p>{admin.length}</p>
            </div>
         </div>
-       
-       
-        
         <div className="pie-graph" style={{ width: "200px", height: "200px" }}>
           <Pie data={data} />
         </div>

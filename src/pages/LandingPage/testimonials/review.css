@@ -6,6 +6,7 @@
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     transition:  all 0.3s linear;
     text-align: center;
+    animation: hello 2s ;
   }
   .review:hover {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
@@ -91,3 +92,8 @@
     color: hsl(205, 78%, 60%);
   }
 
+
+  @keyframes hello {
+    from {opacity: 0;}
+    to {opacity: 1;}
+  }

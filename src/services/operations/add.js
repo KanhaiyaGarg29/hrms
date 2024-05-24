@@ -2,7 +2,7 @@ import { apiConnector } from "../apiConnector";
 import { endpoints } from "../apis";
 import { toast } from "react-hot-toast";
 
-const { ADD_API, ADD_CATEGORY_API, GET_CATEGORY, GET_EMPLOYEES,GET_ADMIN ,ADD_LEAVE,GET_LEAVE,UPDATE_LEAVE_STATUS,GET_PARTICULAR_LEAVE,ADD_TASK,GET_TASK,GET_PARTICULAR_TASK,UPDATE_TASK_STATUS,GET_LEAVE_TYPE} = endpoints;
+const { ADD_API, ADD_CATEGORY_API, GET_CATEGORY, GET_EMPLOYEES,GET_ADMIN ,ADD_LEAVE,GET_LEAVE,UPDATE_LEAVE_STATUS,GET_PARTICULAR_LEAVE,ADD_TASK,GET_TASK,GET_PARTICULAR_TASK,UPDATE_TASK_STATUS,GET_LEAVE_TYPE,GET_USER_BY_CATEGORY} = endpoints;
 
 export function addEmployee(
   name,
@@ -209,20 +209,20 @@ export async function getParticularLeave(userId) {
   }
 }
 
-export async function getLeaveType(){
-  try{
-    const response = await apiConnector("GET", GET_LEAVE_TYPE);
-    if (!response.data.success) {
-      throw new Error(response.data.message);
-    }
-    console.log(response);
-    return response.data.data;
-  } catch (error) {
-    console.error(error);
-    toast.error("Leaves Fetched Successfully");
-    throw error;
-  }
-}
+// export async function getLeaveType(){
+//   try{
+//     const response = await apiConnector("GET", GET_LEAVE_TYPE);
+//     if (!response.data.success) {
+//       throw new Error(response.data.message);
+//     }
+//     console.log(response);
+//     return response.data.data;
+//   } catch (error) {
+//     console.error(error);
+//     toast.error("Leaves Fetched Successfully");
+//     throw error;
+//   }
+// }
 
 export async function getParticulartasks(userCategory) {
   try {
@@ -289,3 +289,46 @@ export function updateTaskStatus(
     }
   };
 }
+
+export async function getLeaveType(userId) {
+  try {
+    const response = await apiConnector("GET",   `${GET_LEAVE_TYPE}/${userId}`);
+    if (!response.data.success) {
+      throw new Error(response.data.message);
+    }
+    console.log(response);
+    return response.data.data;
+  } catch (error) {
+    console.error(error);
+    toast.error("Leaves not Fetched Successfully");
+    throw error;
+  }
+}
+
+
+export function getuserbycategory(
+  category
+  
+) {
+  return async () => {
+    try {
+      // console.log(task,deadline,category);
+      const response = await apiConnector("POST", GET_USER_BY_CATEGORY, {
+        category
+      });
+
+      
+
+      if (!response.data.success) {
+        throw new Error(response.data.message);
+      }
+      toast.success("User found");
+      return response;
+     
+    } catch (error) {
+      console.log(error);
+      toast.error("User not found");
+    }
+  };
+}
+

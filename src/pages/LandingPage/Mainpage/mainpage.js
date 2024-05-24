@@ -3,7 +3,7 @@ import './mainpage.css';
 
 const mainpage = () => {
   return (
-    <div>
+    <div data-aos="zoom-out-down" data-aos-duration="1000">
         <div className='MainDiv'>
             <div className='leftdiv'>
                 <p className='p1'>HR,Payroll,Benefits.</p>
@@ -14,7 +14,7 @@ const mainpage = () => {
                 <div className='star'>
                     <div className='star1'></div>
                 </div>
-                <button className='button1'>Register</button>
+                {/* <button className='button1' href="/login">Login</button> */}
             </div>
             <div className='rightdiv'>
                 <div className='hrimage'>

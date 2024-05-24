@@ -47,3 +47,24 @@ exports.getAllCategory=async(req,res)=>{
         })
     }
 }
+
+exports.getUsersByCategory = async (req,res)=>{
+    try{
+       
+        const Users = await Category.findOne({categoryName:req.body.categoryName}).populate("userId");
+        return res.status(200).json(
+            {
+                success:true,
+                data:Users?.userId,
+                message:"Users Success"
+            }
+           )
+    }catch(error){
+        console.error(error)
+        // Return 500 Internal Server Error status code with error message
+        return res.status(500).json({
+          success: false,
+          message: `Users Failure Please Try Again`,
+        })
+    }
+}

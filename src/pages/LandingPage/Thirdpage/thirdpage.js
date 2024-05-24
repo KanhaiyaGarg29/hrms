@@ -3,7 +3,8 @@ import './thirdpage.css';
 
 const thirdpage = () => {
   return (
-    <div className='thirdpage'>
+    <div className='thirdpage' data-aos="fade-up"
+    data-aos-anchor-placement="top-bottom" data-aos-duration="900">
         <div className='firstline'>
             <p className='firsttext'>WorkWave customers save hundreds of<br></br>
              hours and reduce<span className='hr'> HR</span> costs by 40%.</p>

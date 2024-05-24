@@ -17,5 +17,6 @@ export const endpoints = {
     ADD_TASK:BASE_URL+"/addTask",
     GET_TASK:BASE_URL+"/viewTask",
     GET_PARTICULAR_TASK:BASE_URL+"/etask",
-    UPDATE_TASK_STATUS:BASE_URL+"/updateTaskStatus"
+    UPDATE_TASK_STATUS:BASE_URL+"/updateTaskStatus",
+    GET_USER_BY_CATEGORY:BASE_URL+"/getUsersByCategory"
   }
